@@ -38,9 +38,12 @@ fun partidaLocal(){
     do{
         val jugador1 = crearJugador(nombrej1,"X")
         val jugador2 = crearJugador(nombrej2,"O")
+        limpiarPantalla()
         val partida = inicializarPartida(jugador1,jugador2)
 
         partida.inicio()
+        limpiarPantalla()
+        
         println(partida.mostrarResultados())
         seguirJugando = partida.preguntar("¿Deseas seguir jugando?")
     }while(seguirJugando)
@@ -66,6 +69,7 @@ fun elegirOpcion():Int{
 fun main(){
     var opcion = 0
     do{
+        limpiarPantalla()
         mostrarMenu()
         opcion = elegirOpcion()
         when(opcion){
